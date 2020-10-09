@@ -45,23 +45,7 @@ helperFunctionThatReturnsAnArray = () => {
         selectedCategory={this.state.selectedCategory}
         changeSelectedCategory={this.changeSelectedCategory}
         />
-        
-helperFunctionThatReturnsAnArray = () => {
-  if (this.state.selectedCategory === "All"){
-    return this.state.pigs
-  } else if (this.state.selectedCategory === "Greasy"){
-    return this.state.pigs.filter(pig => pig.greased)
-  } else if(this.state.selectedCategory === "Clean"){
-    return this.state.pigs.filter(pig => !pig.greased)
-  } else if(this.state.selectedCategory === "Name"){
-    let copyOfArray = [...this.state.pigs]
-    copyOfArray.sort((pigA, pigB) => {
-      return pigA.name.localeCompare(pigB.name)
-    })
-    return copyOfArray
-  }
-}
-<PigContainer pigs={this.helperFunctionThatReturnsAnArray()}/>
+        <PigContainer pigs={this.helperFunctionThatReturnsAnArray()}/>
       </div>
     );
   }
