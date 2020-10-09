@@ -80,7 +80,7 @@ ul {
   float: left;
   margin: 2%;
   padding: 1%;
-  outline: #3B0B0B dotted thick;
+  outline: #1ccdb2 dotted thick;
   transition: 0.75s;
   opacity: 1;
 }
@@ -138,3 +138,14 @@ ul {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+
+.form {
+  padding: 20px;
+  background-color: #f7f8f9;
+  border-radius: 0.2rem;
+}
+
+.container {
+  padding: 0;
+} 

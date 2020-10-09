@@ -50,6 +50,7 @@ class Pig extends React.Component {
 
     return(
       <div className="ui eight wide column">
+        <div className="pigTile"> 
           <img 
               src={pigImage[name]}
               alt='piggy'
@@ -64,8 +65,8 @@ class Pig extends React.Component {
           : 
           
           null }
+        </div>
       </div>
-
     )
 
   }
