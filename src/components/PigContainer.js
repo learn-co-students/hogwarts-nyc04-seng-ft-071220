@@ -14,9 +14,9 @@ function PigContainer(props) {
   })
 
     return (
-      <div className="ui grid container">
+      <ul className="ui grid container">
          { arrayOfPigs }
-      </div>
+      </ul>
     );
 }
 

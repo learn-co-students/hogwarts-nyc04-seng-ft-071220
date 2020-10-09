@@ -60,7 +60,9 @@ class Pig extends React.Component {
           { this.state.description ? 
               <div> 
                   <p><span> Specialty: "{specialty}" </span></p>
-                  <p><span> Weight: {weight}lbs </span></p>
+                  <p><span> Weight: {weight} tons </span></p>
+                  <p>Condition: {greased ? "Greasy" : "Clean"}</p>
+                  <p> Medal: {this.props.pig["highest medal achieved"]}</p>
               </div>
           : 
           
