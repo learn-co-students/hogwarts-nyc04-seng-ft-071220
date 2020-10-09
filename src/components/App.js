@@ -9,7 +9,7 @@ class App extends Component {
 
 state = {
   pigs: hogs,
-  searchCategory: ""
+  selectedCategory: "All"
 }
 
 
@@ -22,19 +22,30 @@ changeSelectedCategory = (chosenCat) => {
 helperFunctionThatReturnsAnArray = () => {
   if(this.state.selectedCategory === "All"){
     return this.state.pigs
-  } else if (this.state.selectedCategory === "Greasy"){
+
+  } else if(this.state.selectedCategory === "Greasy"){
     return this.state.pigs.filter(pig => pig.greased)
+
   } else if(this.state.selectedCategory === "Clean"){
     return this.state.pigs.filter(pig => !pig.greased)
+
   } else if(this.state.selectedCategory === "Name"){
     let copyOfArray = [...this.state.pigs]
     copyOfArray.sort((pigA, pigB) => {
       return pigA.name.localeCompare(pigB.name)
     })
     return copyOfArray
+    
+  } else if(this.state.selectedCategory === "Weight"){
+    let copyOfArray = [...this.state.pigs]
+    copyOfArray.sort((pigA, pigB) => {
+      return pigA.weight - pigB.weight
+    })
+    return copyOfArray
   }
 
 }
+
 
 
   render() {
