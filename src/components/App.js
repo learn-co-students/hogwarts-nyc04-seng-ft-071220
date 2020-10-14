@@ -11,13 +11,34 @@ class App extends Component {
 
   state = {
     piggies: hogs,
-    selectedCategory: "Clean"
+    selectedCategory: "Greasy"
   }
 
   changeSelectedCategory = (chosenCategory) => {
     this.setState({
       selectedCategory: chosenCategory
     })
+  }
+
+  helperFunctionThatReturnsAnArray = () => {
+    if(this.state.selectedCategory === "All"){
+      return this.state.piggies
+    } else if(this.state.selectedCategory === "Greasy"){
+      return this.state.piggies.filter(pig => pig.greased)
+    } else if(this.state.selectedCategory === "Clean"){
+      return this.state.piggies.filter(pig => !pig.greased)
+    } else if(this.state.selectedCategory === "Name"){
+      let copyOfArray = [...this.state.piggies]
+      copyOfArray.sort((pigA, pigB) => {
+        return pigA.name.localeCompare(pigB.name)
+      })
+      return copyOfArray
+    } else if(this.state.selectedCategory === "Weight"){
+      let copyOfArray = [...this.state.piggies]
+      copyOfArray.sort((pigA, pigB) => {
+        return pigA.weight - pigB.weight
+      })
+    }
   }
 
   render() {
@@ -29,7 +50,7 @@ class App extends Component {
           selectedCategory={this.state.selectedCategory}
           changeSelectedCategory={this.changeSelectedCategory}
         />
-        <PigPen piggies={this.state.piggies.slice}/>
+        <PigPen piggies={this.helperFunctionThatReturnsAnArray()}/>
       </div>
     );
   }
