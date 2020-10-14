@@ -10,7 +10,14 @@ import hogs from "../porkers_data";
 class App extends Component {
 
   state = {
-    piggies: hogs
+    piggies: hogs,
+    selectedCategory: "Clean"
+  }
+
+  changeSelectedCategory = (chosenCategory) => {
+    this.setState({
+      selectedCategory: chosenCategory
+    })
   }
 
   render() {
@@ -18,8 +25,11 @@ class App extends Component {
     return (
       <div className="App">
         <Nav />
-        <Search />
-        <PigPen piggies={this.state.piggies}/>
+        <Search 
+          selectedCategory={this.state.selectedCategory}
+          changeSelectedCategory={this.changeSelectedCategory}
+        />
+        <PigPen piggies={this.state.piggies.slice}/>
       </div>
     );
   }
