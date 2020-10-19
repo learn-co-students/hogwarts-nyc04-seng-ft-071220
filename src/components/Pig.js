@@ -8,6 +8,7 @@ class Pig extends React.Component {
     }
 
     onPigClick = (evt) => {
+        evt.target.classList.toggle("showred")
         this.setState({
             showdetail : !this.state.showdetail  
         })

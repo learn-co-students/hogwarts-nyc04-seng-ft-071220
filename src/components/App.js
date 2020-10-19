@@ -45,7 +45,7 @@ pigFilterArray = () => {
         })
         return copyOfArrayN
     default :
-      null    
+      // null    
   }
  
 }

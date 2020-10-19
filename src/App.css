@@ -156,3 +156,7 @@ ul{
   grid-gap: 1em;
   margin-top: 3em;
 }
+
+.showred {
+  border: 50px red solid; 
+}
